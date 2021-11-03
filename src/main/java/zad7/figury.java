@@ -22,20 +22,6 @@ class Kolo extends Figura {
     }
 }
 
-class Szesciokat extends Figura {
-    private double bok;
-    public double Obwod() {
-        return 6*bok;
-    }
-    public double Pole() {
-        return 3*bok*bok*Math.sqrt(3)/2;
-    }
-    Szesciokat(double bok) throws BledneDane {
-        if(bok <= 0) throw new BledneDane();
-        this.bok = bok;
-    }
-}
-
 class Kwadrat extends Figura {
     private double bok;
     public double Obwod() {
@@ -89,7 +75,7 @@ public class figury {
         String a = args[0];
         int arg = 1;
         for (int j = 0; j < a.length(); j++) {
-            if (a.charAt(j) == 'o' || a.charAt(j) == 's') arg++;
+            if (a.charAt(j) == 'o') arg++;
             else if (a.charAt(j) == 'c') arg += 5;
         }
         if (arg == args.length) {
@@ -97,7 +83,7 @@ public class figury {
             int i = 1;
             double x, y;
             for (int j = 0; j < a.length(); j++) {
-                if (a.charAt(j) == 'o' || a.charAt(j) == 'c' || a.charAt(j) == 's') {
+                if (a.charAt(j) == 'o' || a.charAt(j) == 'c') {
                     try {
                         x = Double.parseDouble(args[i]);
                         if (a.charAt(j) == 'o') {
@@ -121,10 +107,6 @@ public class figury {
                             } else
                                 System.out.println(args[i] + "," + args[i + 1] + "," + args[i + 2] + "," + args[i + 3] + "," + args[i + 4] + " - z tych danych nie da sie utworzyc kwadratu, rombu ani prostokata");
                             i += 5;
-                        } else if (a.charAt(j) == 's') {
-                            f[j] = new Szesciokat(x);
-                            i++;
-                            System.out.println("Szesciokat (bok = " + x + "):");
                         }
                         if (f[j] != null) {
                             System.out.println("\tPole = " + f[j].Pole());

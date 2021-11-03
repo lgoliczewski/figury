@@ -1,0 +1,48 @@
+@startuml
+
+abstract class Figura {
+    {abstract} Obwod ()
+    {abstract} Pole ()
+}
+class BledneDane
+class BledneDaneCzworokata
+
+class figury {
+{static} +main ()
+}
+class Kolo {
+Kolo (double promien)
+-promien
++Obwod ()
++Pole ()
+}
+class Kwadrat {
+Kwadrat (double bok)
+-bok
++Obwod ()
++Pole ()
+}
+class Prostokat {
+Prostokat (double bok1, double bok2)
+-bok1
+-bok2
++Obwod ()
++Obwod ()
+}
+class Romb {
+Romb (double bok, double kat)
+-bok
+-kat
++Obwod ()
++Pole ()
+}
+Figura <|-- Kolo
+Figura <|-- Kwadrat
+Figura <|-- Prostokat
+Figura <|-- Romb
+figury "1" -- "1..*" Figura
+BledneDane <.. Kolo : <<throws>>
+BledneDaneCzworokata <.. Kwadrat : <<throws>>
+BledneDaneCzworokata <.. Prostokat : <<throws>>
+BledneDaneCzworokata <.. Romb: <<throws>>
+@enduml
