@@ -1,5 +1,6 @@
 package zad7;
 
+
 class BledneDane extends Exception {}
 class BledneDaneCzworokata extends Exception {}
 

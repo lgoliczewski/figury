@@ -4,6 +4,7 @@ abstract class Figura {
     {abstract} Obwod ()
     {abstract} Pole ()
 }
+
 class BledneDane
 class BledneDaneCzworokata
 
