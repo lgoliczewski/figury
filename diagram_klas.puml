@@ -27,7 +27,7 @@ Prostokat (double bok1, double bok2)
 -bok1
 -bok2
 +Obwod ()
-+Obwod ()
++Pole ()
 }
 class Romb {
 Romb (double bok, double kat)
